@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<h1>Form Validation</h1>
+<script type="text/javascript">
+    function myFunction()
+    {
+    var id = document.getElementById("mobileNumber").value;
+    var valid =/^([A-Za-z0-9\.-_]+)@([A-Za-z0-9\-]+).([a-z]{2,8})(.[a-z]{2,8})?/g
+    console.log(id);
+    if(valid.test(id))
+    {
+    document.getElementById("validation").innerHTML = "Valid E-Mail";
+    document.getElementById("validation").style.visibility = "visible";
+    document.getElementById("validation").style.color = "green";
+    }
+    else
+    {
+    document.getElementById("validation").innerHTML = "Invalid E-Mail";
+    document.getElementById("validation").style.visibility = "visible";
+    document.getElementById("validation").style.color = "green";
+    }
+    }
+    </script>
+</head>
+<body>
+<form action="home.html">
+<input type="text" id="mobileNumber"><br/><br/>
+<button type="button" onclick="myFunction()">Submit</button><br/><br/>
+<label id="validation" style="color: red; visibility:hidden;">Number Validation</label>
+</form>
+</body>
+</html>
